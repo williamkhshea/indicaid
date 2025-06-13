@@ -1,5 +1,6 @@
 {{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'section-multicolumn-review.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -124,6 +125,13 @@
                 </div>
               {%- endif -%}
               <div class="multicolumn-card__info">
+                <div class="multicolumn-card__stars">
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
                 {%- if block.settings.title != blank -%}
                   <h3 class="inline-richtext">{{ block.settings.title }}</h3>
                 {%- endif -%}
@@ -161,12 +169,6 @@
           >
             <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
           </button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ section.blocks.size }}</span>
-          </div>
           <button
             type="button"
             class="slider-button slider-button--next"
@@ -197,7 +199,7 @@
 
 {% schema %}
 {
-  "name": "t:sections.multicolumn.name",
+  "name": "t:sections.multicolumn_review.name",
   "class": "section",
   "tag": "section",
   "disabled_on": {
@@ -284,7 +286,7 @@
           "label": "t:sections.multicolumn.settings.image_width.options__3.label"
         }
       ],
-      "default": "full",
+      "default": "half",
       "label": "t:sections.multicolumn.settings.image_width.label"
     },
     {
@@ -308,7 +310,7 @@
           "label": "t:sections.multicolumn.settings.image_ratio.options__4.label"
         }
       ],
-      "default": "adapt",
+      "default": "circle",
       "label": "t:sections.multicolumn.settings.image_ratio.label"
     },
     {
@@ -337,7 +339,7 @@
       "min": 1,
       "max": 6,
       "step": 1,
-      "default": 3,
+      "default": 4,
       "label": "t:sections.multicolumn.settings.columns_desktop.label"
     },
     {
@@ -353,7 +355,7 @@
           "label": "t:sections.multicolumn.settings.column_alignment.options__2.label"
         }
       ],
-      "default": "left",
+      "default": "center",
       "label": "t:sections.multicolumn.settings.column_alignment.label"
     },
     {
@@ -395,7 +397,7 @@
           "label": "t:sections.multicolumn.settings.columns_mobile.options__2.label"
         }
       ],
-      "default": "1",
+      "default": "2",
       "label": "t:sections.multicolumn.settings.columns_mobile.label"
     },
     {
@@ -467,8 +469,11 @@
   ],
   "presets": [
     {
-      "name": "t:sections.multicolumn.presets.name",
+      "name": "t:sections.multicolumn_review.presets.name",
       "blocks": [
+        {
+          "type": "column"
+        },
         {
           "type": "column"
         },

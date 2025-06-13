@@ -1,3 +1,7 @@
+.multicolumn__title {
+  padding-bottom: 2.5rem;
+}
+
 .multicolumn .title {
   margin: 0;
 }
@@ -8,6 +12,14 @@
 
 .multicolumn .title-wrapper-with-link {
   margin-top: 0;
+}
+
+.multicolumn__title > * + * {
+  margin-top: 10px;
+}
+
+.multicolumn__title.center {
+  justify-content: center;
 }
 
 @media screen and (max-width: 749px) {
@@ -74,8 +86,9 @@
 }
 
 .multicolumn.background-primary .multicolumn-card {
-  background: rgb(var(--color-background))
-    linear-gradient(rgba(var(--color-foreground), 0.04), rgba(var(--color-foreground), 0.04));
+  /* background: rgb(var(--color-background))
+    linear-gradient(rgba(var(--color-foreground), 0.04), rgba(var(--color-foreground), 0.04)); */
+  background: #ffffff;
 }
 
 .multicolumn-list h3 {
@@ -92,8 +105,13 @@
   margin-left: 2.5rem;
   margin-right: 2.5rem;
 }
-
+/*
 .multicolumn-card__info > :nth-child(2) {
+  margin-top: 1rem;
+}
+*/
+
+.multicolumn-card__info > * + * {
   margin-top: 1rem;
 }
 

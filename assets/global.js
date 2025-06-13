@@ -287,7 +287,6 @@ function debounce(fn, wait) {
   };
 }
 
-
 function throttle(fn, delay) {
   let lastCall = 0;
   return function (...args) {
@@ -730,9 +729,7 @@ class SliderComponent extends HTMLElement {
     super();
     this.slider = this.querySelector('[id^="Slider-"]');
     this.sliderItems = this.querySelectorAll('[id^="Slide-"]');
-    this.enableSliderLooping = false;
-    this.currentPageElement = this.querySelector('.slider-counter--current');
-    this.pageTotalElement = this.querySelector('.slider-counter--total');
+    this.enableSliderLooping = true; // Changed to true to enable looping
     this.prevButton = this.querySelector('button[name="previous"]');
     this.nextButton = this.querySelector('button[name="next"]');
 
@@ -771,11 +768,6 @@ class SliderComponent extends HTMLElement {
     const previousPage = this.currentPage;
     this.currentPage = Math.round(this.slider.scrollLeft / this.sliderItemOffset) + 1;
 
-    if (this.currentPageElement && this.pageTotalElement) {
-      this.currentPageElement.textContent = this.currentPage;
-      this.pageTotalElement.textContent = this.totalPages;
-    }
-
     if (this.currentPage != previousPage) {
       this.dispatchEvent(
         new CustomEvent('slideChanged', {
@@ -787,8 +779,10 @@ class SliderComponent extends HTMLElement {
       );
     }
 
+    // Remove the disabling of buttons when looping is enabled
     if (this.enableSliderLooping) return;
 
+    // Only disable buttons if looping is not enabled
     if (this.isSlideVisible(this.sliderItemsToShow[0]) && this.slider.scrollLeft === 0) {
       this.prevButton.setAttribute('disabled', 'disabled');
     } else {
@@ -810,10 +804,22 @@ class SliderComponent extends HTMLElement {
   onButtonClick(event) {
     event.preventDefault();
     const step = event.currentTarget.dataset.step || 1;
-    this.slideScrollPosition =
-      event.currentTarget.name === 'next'
-        ? this.slider.scrollLeft + step * this.sliderItemOffset
-        : this.slider.scrollLeft - step * this.sliderItemOffset;
+
+    // Handle looping behavior
+    if (event.currentTarget.name === 'previous' && this.currentPage === 1) {
+      // If on first slide and previous button clicked, go to last slide
+      this.slideScrollPosition = this.slider.scrollLeft + this.sliderItemOffset * (this.sliderItemsToShow.length - 1);
+    } else if (event.currentTarget.name === 'next' && this.currentPage === this.totalPages) {
+      // If on last slide and next button clicked, go to first slide
+      this.slideScrollPosition = 0;
+    } else {
+      // Normal behavior for middle slides
+      this.slideScrollPosition =
+        event.currentTarget.name === 'next'
+          ? this.slider.scrollLeft + step * this.sliderItemOffset
+          : this.slider.scrollLeft - step * this.sliderItemOffset;
+    }
+
     this.setSlidePosition(this.slideScrollPosition);
   }
 
@@ -1282,51 +1288,39 @@ if (!customElements.get('bulk-add')) {
 }
 
 class CartPerformance {
-  static #metric_prefix = "cart-performance"
+  static #metric_prefix = 'cart-performance';
 
   static createStartingMarker(benchmarkName) {
-    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`
+    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`;
     return performance.mark(`${metricName}:start`);
   }
 
   static measureFromEvent(benchmarkName, event) {
-    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`
+    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`;
     const startMarker = performance.mark(`${metricName}:start`, {
-      startTime: event.timeStamp
+      startTime: event.timeStamp,
     });
 
     const endMarker = performance.mark(`${metricName}:end`);
 
-    performance.measure(
-      metricName,
-      `${metricName}:start`,
-      `${metricName}:end`
-    );
+    performance.measure(metricName, `${metricName}:start`, `${metricName}:end`);
   }
 
   static measureFromMarker(benchmarkName, startMarker) {
-    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`
+    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`;
     const endMarker = performance.mark(`${metricName}:end`);
 
-    performance.measure(
-      metricName,
-      startMarker.name,
-      `${metricName}:end`
-    );
+    performance.measure(metricName, startMarker.name, `${metricName}:end`);
   }
 
   static measure(benchmarkName, callback) {
-    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`
+    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`;
     const startMarker = performance.mark(`${metricName}:start`);
 
     callback();
 
     const endMarker = performance.mark(`${metricName}:end`);
 
-    performance.measure(
-      metricName,
-      `${metricName}:start`,
-      `${metricName}:end`
-    );
+    performance.measure(metricName, `${metricName}:start`, `${metricName}:end`);
   }
 }

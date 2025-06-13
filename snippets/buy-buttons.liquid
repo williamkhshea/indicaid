@@ -6,6 +6,8 @@
   - product_form_id: {String} product form id.
   - section_id: {String} id of section to which this snippet belongs.
   - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
+  - force_secondary_button: {Boolean} for the secondary button. If true the button is rendered as secondary, false - primary (optional).
+  - small_button: {Boolean} for the small button. If true the button is rendered as small, false - not small (optional).
 
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
@@ -74,7 +76,7 @@
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="product-form__submit button button--full-width {% if show_dynamic_checkout or force_secondary_button %}button--secondary{% else %}button--primary{% endif %} {% if small_button %}button--small{% endif %}"
             {% if product.selected_or_first_available_variant.available == false
               or quantity_rule_soldout
               or product.selected_or_first_available_variant == null

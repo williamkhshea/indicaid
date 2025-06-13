@@ -95,7 +95,7 @@
       {% endfor %}
 
       {{ scheme_classes | prepend: 'body' }} {
-        color: rgba(var(--color-foreground), 0.75);
+        color: rgba(var(--color-foreground));
         background-color: rgb(var(--color-background));
       }
 
@@ -103,7 +103,7 @@
         --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
-        --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
+        --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 200 | at_most: 1000 }};
 
         --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         --font-heading-style: {{ settings.type_header_font.style }};
@@ -241,7 +241,6 @@
         min-height: 100%;
         margin: 0;
         font-size: 1.5rem;
-        letter-spacing: 0.06rem;
         line-height: calc(1 + 0.8 / var(--font-body-scale));
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);

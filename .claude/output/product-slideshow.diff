@@ -1,0 +1,131 @@
+--- a/snippets/product-media-gallery.liquid
++++ b/snippets/product-media-gallery.liquid
+@@ -30,7 +30,7 @@
+     assign single_media_visible_mobile = true
+   endif
+ 
+-  if media_count == 0 or single_media_visible_mobile or section.settings.mobile_thumbnails == 'show' or section.settings.mobile_thumbnails == 'columns' and media_count < 3
++  if media_count == 0 or single_media_visible_mobile or section.settings.mobile_thumbnails == 'show' or section.settings.mobile_thumbnails == 'columns' and media_count < 3
+     assign hide_mobile_slider = true
+   endif
+ 
+@@ -125,7 +125,7 @@
+         {%- endunless -%}
+       {%- endfor -%}
+     </ul>
+-    <div class="slider-buttons quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
++    <div class="slider-buttons quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}{% if media_count <= 1 %} medium-hide large-up-hide{% endif %}">
+       <button
+         type="button"
+         class="slider-button slider-button--prev"
+--- a/assets/media-gallery.js
++++ b/assets/media-gallery.js
+@@ -10,13 +10,22 @@ if (!customElements.get('media-gallery')) {
+           thumbnails: this.querySelector('[id^="GalleryThumbnails"]'),
+         };
+         this.mql = window.matchMedia('(min-width: 750px)');
+-        if (!this.elements.thumbnails) return;
+ 
+         this.elements.viewer.addEventListener('slideChanged', debounce(this.onSlideChanged.bind(this), 500));
+-        this.elements.thumbnails.querySelectorAll('[data-target]').forEach((mediaToSwitch) => {
+-          mediaToSwitch
+-            .querySelector('button')
+-            .addEventListener('click', this.setActiveMedia.bind(this, mediaToSwitch.dataset.target, false));
+-        });
++        
++        // Set up thumbnail navigation if thumbnails exist
++        if (this.elements.thumbnails) {
++          this.elements.thumbnails.querySelectorAll('[data-target]').forEach((mediaToSwitch) => {
++            mediaToSwitch
++              .querySelector('button')
++              .addEventListener('click', this.setActiveMedia.bind(this, mediaToSwitch.dataset.target, false));
++          });
++        }
++        
++        // Set up prev/next navigation buttons
++        this.setupNavigationButtons();
++        
+         if (this.dataset.desktopLayout.includes('thumbnail') && this.mql.matches) this.removeListSemantic();
+       }
+ 
+@@ -24,7 +33,9 @@ if (!customElements.get('media-gallery')) {
+       onSlideChanged(event) {
+         const thumbnail = this.elements.thumbnails.querySelector(
+           `[data-target="${event.detail.currentElement.dataset.mediaId}"]`
+         );
+-        this.setActiveThumbnail(thumbnail);
++        if (thumbnail) {
++          this.setActiveThumbnail(thumbnail);
++        }
+       }
+ 
+       setActiveMedia(mediaId, prepend) {
+@@ -65,11 +76,13 @@ if (!customElements.get('media-gallery')) {
+         this.playActiveMedia(activeMedia);
+ 
+         if (!this.elements.thumbnails) return;
+         const activeThumbnail = this.elements.thumbnails.querySelector(`[data-target="${mediaId}"]`);
+-        this.setActiveThumbnail(activeThumbnail);
+-        this.announceLiveRegion(activeMedia, activeThumbnail.dataset.mediaPosition);
++        if (activeThumbnail) {
++          this.setActiveThumbnail(activeThumbnail);
++          this.announceLiveRegion(activeMedia, activeThumbnail.dataset.mediaPosition);
++        }
+       }
+ 
+       setActiveThumbnail(thumbnail) {
+         if (!this.elements.thumbnails || !thumbnail) return;
+@@ -82,6 +95,54 @@ if (!customElements.get('media-gallery')) {
+         this.elements.thumbnails.slider.scrollTo({ left: thumbnail.offsetLeft });
+       }
+ 
++      setupNavigationButtons() {
++        const prevButton = this.elements.viewer.querySelector('.slider-button--prev');
++        const nextButton = this.elements.viewer.querySelector('.slider-button--next');
++        
++        if (prevButton) {
++          prevButton.addEventListener('click', this.navigateToPrevious.bind(this));
++        }
++        if (nextButton) {
++          nextButton.addEventListener('click', this.navigateToNext.bind(this));
++        }
++      }
++      
++      navigateToPrevious() {
++        const mediaItems = this.getAllMediaItems();
++        const currentIndex = this.getCurrentMediaIndex(mediaItems);
++        
++        if (currentIndex > 0) {
++          const previousMedia = mediaItems[currentIndex - 1];
++          this.setActiveMedia(previousMedia.dataset.mediaId, false);
++        }
++      }
++      
++      navigateToNext() {
++        const mediaItems = this.getAllMediaItems();
++        const currentIndex = this.getCurrentMediaIndex(mediaItems);
++        
++        if (currentIndex < mediaItems.length - 1) {
++          const nextMedia = mediaItems[currentIndex + 1];
++          this.setActiveMedia(nextMedia.dataset.mediaId, false);
++        }
++      }
++      
++      getAllMediaItems() {
++        return Array.from(this.elements.viewer.querySelectorAll('[data-media-id]'));
++      }
++      
++      getCurrentMediaIndex(mediaItems) {
++        const activeMedia = this.elements.viewer.querySelector('[data-media-id].is-active');
++        if (!activeMedia) {
++          return 0;
++        }
++        
++        return mediaItems.findIndex(media => 
++          media.dataset.mediaId === activeMedia.dataset.mediaId
++        );
++      }
++
+       announceLiveRegion(activeItem, position) {
+         const image = activeItem.querySelector('.product__modal-opener--image img');
+         if (!image) return;

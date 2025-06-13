@@ -1,0 +1,11 @@
+.multicolumn-card__stars {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: rgb(var(--color-button));
+  font-size: 2rem;
+}
+
+.multicolumn-list__item.center .multicolumn-card__stars {
+  justify-content: center;
+}

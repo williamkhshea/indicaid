@@ -137,16 +137,24 @@
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                 class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
               >
-                {{- 'products.product.on_sale' | t -}}
+                {{ 'products.product.on_sale' | t }}
+                {{
+                  card_product.compare_at_price
+                  | minus: card_product.price
+                  | times: 100.0
+                  | divided_by: card_product.compare_at_price
+                  | round
+                -}}
+                %!
               </span>
             {%- endif -%}
           </div>
         </div>
       </div>
-      <div class="card__content">
+      <div class="card__content {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}">
         <div class="card__information">
           <h3
-            class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
+            class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h4{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}
               id="title-{{ section_id }}-{{ card_product.id }}"
             {% endif %}
@@ -183,25 +191,32 @@
                 role="img"
                 aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: card_product.metafields.reviews.rating.value, rating_max: card_product.metafields.reviews.rating.value.scale_max }}"
               >
-                <span
-                  aria-hidden="true"
-                  class="rating-star"
-                  style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
-                ></span>
+                {% comment %}
+                  <span
+                    aria-hidden="true"
+                    class="rating-star"
+                    style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
+                  ></span>
+                {% endcomment %}
+                <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}">
+                  {{ card_product.metafields.judgeme.badge }}
+                </div>
               </div>
-              <p class="rating-text caption">
-                <span aria-hidden="true">
-                  {{- card_product.metafields.reviews.rating.value }} /
-                  {{ card_product.metafields.reviews.rating.value.scale_max -}}
-                </span>
-              </p>
-              <p class="rating-count caption">
-                <span aria-hidden="true">({{ card_product.metafields.reviews.rating_count }})</span>
-                <span class="visually-hidden">
-                  {{- card_product.metafields.reviews.rating_count }}
-                  {{ 'accessibility.total_reviews' | t -}}
-                </span>
-              </p>
+              {% comment %}
+                <p class="rating-text caption">
+                  <span aria-hidden="true">
+                    {{- card_product.metafields.reviews.rating.value }} /
+                    {{ card_product.metafields.reviews.rating.value.scale_max -}}
+                  </span>
+                </p>
+                <p class="rating-count caption">
+                  <span aria-hidden="true">({{ card_product.metafields.reviews.rating_count }})</span>
+                  <span class="visually-hidden">
+                    {{- card_product.metafields.reviews.rating_count }}
+                    {{ 'accessibility.total_reviews' | t -}}
+                  </span>
+                </p>
+              {% endcomment %}
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
@@ -303,7 +318,7 @@
                   id="{{ product_form_id }}-submit"
                   type="submit"
                   name="add"
-                  class="quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add animate-arrow{% endif %}"
+                  class="quick-add__submit button button--full-width button--primary{% if horizontal_quick_add %} card--horizontal__quick-add animate-arrow{% endif %}"
                   aria-haspopup="dialog"
                   aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                   data-product-url="{{ card_product.url }}"
@@ -358,7 +373,7 @@
                     id="{{ product_form_id }}-submit"
                     type="submit"
                     name="add"
-                    class="quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
+                    class="quick-add__submit button button--full-width button--primary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
                     aria-haspopup="dialog"
                     aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                     aria-live="polite"
@@ -401,7 +416,7 @@
                   id="{{ product_form_id }}-submit"
                   type="submit"
                   name="add"
-                  class="quick-add__submit button button--full-width button--secondary"
+                  class="quick-add__submit button button--full-width button--primary"
                   aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                   data-sold-out-message="true"
                   disabled
@@ -432,7 +447,7 @@
                   id="{{ product_form_id }}-submit"
                   type="submit"
                   name="add"
-                  class="quick-add__submit button button--full-width button--secondary"
+                  class="quick-add__submit button button--full-width button--primary"
                   aria-haspopup="dialog"
                   aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                   data-product-url="{{ card_product.url }}"
@@ -561,7 +576,15 @@
               id="Badge-{{ section_id }}-{{ card_product.id }}"
               class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
             >
-              {{- 'products.product.on_sale' | t -}}
+              {{ 'products.product.on_sale' | t }}
+              {{
+                card_product.compare_at_price
+                | minus: card_product.price
+                | times: 100.0
+                | divided_by: card_product.compare_at_price
+                | round
+              -}}
+              %!
             </span>
           {%- endif -%}
         </div>

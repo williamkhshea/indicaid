@@ -1,8 +1,21 @@
+{%- comment -%}
+  https://community.shopify.com/c/shopify-design/how-do-i-display-different-images-for-mobile-and-desktop-on/m-p/1706093
+{%- endcomment -%}
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 
 {%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
   {%- style -%}
     @media screen and (max-width: 749px) {
+      {%- if section.settings.image_mobile == blank and section.settings.image_2 == blank and section.settings.mobile_image_crop != 'none' -%}
+      /* Override aspect ratio to 1:1 when mobile cropping is enabled */
+      #Banner-{{ section.id }}::before,
+      #Banner-{{ section.id }} .banner__media::before,
+      #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
+        padding-bottom: 100%;
+        content: '';
+        display: block;
+      }
+      {%- else -%}
       #Banner-{{ section.id }}::before,
       #Banner-{{ section.id }} .banner__media::before,
       #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
@@ -10,6 +23,7 @@
         content: '';
         display: block;
       }
+      {%- endif -%}
     }
 
     @media screen and (min-width: 750px) {
@@ -69,18 +83,53 @@
         else
           assign sizes = full_width
         endif
+
+        assign should_crop_mobile = false
+        if section.settings.image_mobile == blank and section.settings.image_2 == blank and section.settings.mobile_image_crop != 'none'
+          assign should_crop_mobile = true
+        endif
       -%}
-      {{
-        section.settings.image
-        | image_url: width: 3840
-        | image_tag:
-          width: section.settings.image.width,
-          height: image_height,
-          class: image_class,
-          sizes: sizes,
-          widths: widths,
-          fetchpriority: fetch_priority
-      }}
+      {% comment %}
+        {{
+          section.settings.image
+          | image_url: width: 3840
+          | image_tag:
+            width: section.settings.image.width,
+            height: image_height,
+            class: image_class,
+            sizes: sizes,
+            widths: widths,
+            fetchpriority: fetch_priority
+        }}
+      {% endcomment %}
+      <picture>
+        <source media="(min-width: 768px)" srcset="{{ section.settings.image | image_url: width: 3840 }}">
+        <source
+          media="(min-width: 300px)"
+          {%- if should_crop_mobile -%}
+            srcset="
+              {{ section.settings.image | image_url: width: 375, height: 375, crop: section.settings.mobile_image_crop }} 375w,
+              {{ section.settings.image | image_url: width: 550, height: 550, crop: section.settings.mobile_image_crop }} 550w,
+              {{ section.settings.image | image_url: width: 750, height: 750, crop: section.settings.mobile_image_crop }} 750w
+            "
+          {%- else -%}
+            srcset="{{ section.settings.image_mobile | image_url: width: 750 }}"
+          {%- endif -%}
+        >
+        {{
+          section.settings.image
+          | image_url: width: 3840, crop: 'center'
+          | image_tag:
+            loading: 'lazy',
+            width: section.settings.image.width,
+            height: image_height,
+            class: image_class,
+            sizes: sizes,
+            widths: widths,
+            fetchpriority: fetch_priority,
+            alt: section.settings.image.alt
+        }}
+      </picture>
     </div>
   {%- elsif section.settings.image_2 == blank -%}
     <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
@@ -120,12 +169,12 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
-            <h2
+            <h1
               class="banner__heading inline-richtext {{ block.settings.heading_size }}"
               {{ block.shopify_attributes }}
             >
               {{ block.settings.heading }}
-            </h2>
+            </h1>
           {%- when 'text' -%}
             <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
               <p>{{ block.settings.text }}</p>
@@ -182,6 +231,11 @@
     },
     {
       "type": "image_picker",
+      "id": "image_mobile",
+      "label": "t:sections.image-banner.settings.image_mobile.label"
+    },
+    {
+      "type": "image_picker",
       "id": "image_2",
       "label": "t:sections.image-banner.settings.image_2.label"
     },
@@ -218,6 +272,30 @@
       ],
       "default": "medium",
       "label": "t:sections.image-banner.settings.image_height.label"
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_crop",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.image-banner.settings.mobile_image_crop.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.image-banner.settings.mobile_image_crop.options__2.label"
+        },
+        {
+          "value": "left",
+          "label": "t:sections.image-banner.settings.mobile_image_crop.options__3.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.image-banner.settings.mobile_image_crop.options__4.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.image-banner.settings.mobile_image_crop.label"
     },
     {
       "type": "select",
@@ -321,7 +399,7 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
+      "default": "default-scheme"
     },
     {
       "type": "header",
@@ -332,7 +410,7 @@
       "id": "stack_images_on_mobile",
       "default": true,
       "label": "t:sections.image-banner.settings.stack_images_on_mobile.label"
-    },    
+    },
     {
       "type": "select",
       "id": "mobile_content_alignment",
@@ -441,8 +519,8 @@
       "limit": 1,
       "settings": [
         {
-        "type": "header",
-        "content": "t:sections.image-banner.blocks.buttons.settings.header_1.content"
+          "type": "header",
+          "content": "t:sections.image-banner.blocks.buttons.settings.header_1.content"
         },
         {
           "type": "text",
@@ -463,8 +541,8 @@
           "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_1.label"
         },
         {
-        "type": "header",
-        "content": "t:sections.image-banner.blocks.buttons.settings.header_2.content"
+          "type": "header",
+          "content": "t:sections.image-banner.blocks.buttons.settings.header_2.content"
         },
         {
           "type": "text",

@@ -96,9 +96,11 @@
   padding: 1.5rem;
 }
 
+/* 
 .collapsible-row-layout .accordion .accordion__content {
   padding-top: 0;
 }
+*/
 
 .collapsible-content summary:hover {
   background: rgba(var(--color-foreground), 0.04);

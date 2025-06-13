@@ -339,7 +339,7 @@ if (!customElements.get('product-info')) {
         const currentVariantId = this.productForm?.variantIdInput?.value;
         if (!currentVariantId) return;
 
-        this.querySelector('.quantity__rules-cart .loading__spinner').classList.remove('hidden');
+        // this.querySelector('.quantity__rules-cart .loading__spinner').classList.remove('hidden');
         return fetch(`${this.dataset.url}?variant=${currentVariantId}&section_id=${this.dataset.section}`)
           .then((response) => response.text())
           .then((responseText) => {
@@ -413,4 +413,99 @@ if (!customElements.get('product-info')) {
       }
     }
   );
+}
+
+class ProductStickyBanner {
+  constructor() {
+    this.banner = document.getElementById('product-sticky-banner');
+    this.productInfo = document.querySelector('product-info');
+
+    if (!this.banner || !this.productInfo) return;
+
+    this.productInfoBottom = 0;
+    this.isVisible = false;
+    this.stickyHeader = document.querySelector('sticky-header');
+    this.headerHeight = this.stickyHeader ? this.stickyHeader.offsetHeight : 0;
+
+    this.init();
+  }
+
+  init() {
+    // Calculate the bottom position of the product-info section
+    this.calculatePositions();
+
+    // Add scroll event listener
+    window.addEventListener('scroll', this.handleScroll.bind(this));
+
+    // Recalculate on resize
+    window.addEventListener('resize', this.calculatePositions.bind(this));
+
+    // Handle variant changes to update the banner
+    document.addEventListener('variant:change', (event) => {
+      this.updateBannerVariant(event.detail);
+    });
+  }
+
+  calculatePositions() {
+    const rect = this.productInfo.getBoundingClientRect();
+    this.productInfoBottom = rect.bottom + window.scrollY;
+  }
+
+  handleScroll() {
+    const scrollPosition = window.scrollY + window.innerHeight;
+
+    // Show banner when scrolled past the product-info section
+    if (window.scrollY > this.productInfoBottom && !this.isVisible) {
+      this.showBanner();
+    }
+    // Hide banner when scrolled back to the product-info section
+    else if (window.scrollY <= this.productInfoBottom && this.isVisible) {
+      this.hideBanner();
+    }
+  }
+
+  showBanner() {
+    this.banner.classList.add('show');
+    this.isVisible = true;
+  }
+
+  hideBanner() {
+    this.banner.classList.remove('show');
+    this.isVisible = false;
+  }
+
+  updateBannerVariant(variant) {
+    if (!variant) return;
+
+    // Update price
+    const priceContainer = this.banner.querySelector('.product-sticky-banner__price');
+    if (priceContainer) {
+      // The price will be updated automatically by the price component
+    }
+
+    // Update add to cart button state
+    const addToCartButton = this.banner.querySelector('.product-form__submit');
+    if (addToCartButton) {
+      if (variant.available) {
+        addToCartButton.disabled = false;
+        addToCartButton.querySelector('span').textContent = window.variantStrings.addToCart;
+      } else {
+        addToCartButton.disabled = true;
+        addToCartButton.querySelector('span').textContent = window.variantStrings.soldOut;
+      }
+    }
+
+    // Update hidden input value
+    const input = this.banner.querySelector('input[name="id"]');
+    if (input) {
+      input.value = variant.id;
+    }
+  }
+}
+
+// Initialize the sticky banner when the DOM is fully loaded
+if (typeof window.customElements.get('product-info') !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    new ProductStickyBanner();
+  });
 }

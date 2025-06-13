@@ -281,6 +281,10 @@
         "social_vimeo_link": {
           "label": "Vimeo",
           "info": "https://vimeo.com/shopify"
+        },
+        "social_linkedin_link": {
+          "label": "LinkedIn",
+          "info": "https://www.linkedin.com/company/shopify/"
         }
       }
     },
@@ -489,6 +493,10 @@
             },
             "link": {
               "label": "Link"
+            },
+            "button_label": {
+              "label": "Button label",
+              "default": "Shop Now"
             }
           }
         }
@@ -502,7 +510,7 @@
       "settings": {
         "include_margins": {
           "label": "Make section margins the same as theme"
-        }
+        },
       },
       "presets": {
         "name": "Apps"
@@ -1157,6 +1165,9 @@
         "image": {
           "label": "Image 1"
         },
+        "image_mobile": {
+          "label": "Image (Mobile)"
+        },
         "image_2": {
           "label": "Image 2"
         },
@@ -1178,6 +1189,21 @@
             "label": "Large"
           }
           },
+        "mobile_image_crop": {
+          "label": "Mobile image crop",
+          "options__1": {
+            "label": "None"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Left"
+          },
+          "options__4": {
+            "label": "Right"
+          }
+        },
         "content": {
           "content": "Content"
         },
@@ -1942,7 +1968,10 @@
               "options__3": {
                 "label": "Uppercase"
               }
-            }
+            },
+            "font_color": {
+              "label": "Font Color"
+            },
           }
         },
         "title": {
@@ -2276,6 +2305,9 @@
                 "label": "Vertical"
               }
             },
+            "has_border_lines": {
+              "label": "Show border lines"
+            },
             "pairing_1": {
               "label": "Pairing 1",
               "info": "Choose an icon or add an image for each pairing"
@@ -2318,7 +2350,7 @@
             "heading_3": {
               "label": "Heading",
               "default": "Heading"
-            }
+            },
           }
         }
       },
@@ -2466,12 +2498,80 @@
         }
       }
     },
+    "multicolumn_review": {
+      "name": "Multicolumn review",
+      "presets": {
+        "name": "Multicolumn review"
+      }
+    },
+    "multicolumn_steps": {
+      "name": "Multicolumn steps",
+      "settings": {
+        "header_steps": {
+          "content": "Steps Configuration"
+        },
+        "image1": {
+          "label": "Step 1 Image"
+        },
+        "title1": {
+          "label": "Step 1 Title"
+        },
+        "text1": {
+          "label": "Step 1 Text"
+        },
+        "image2": {
+          "label": "Step 2 Image"
+        },
+        "title2": {
+          "label": "Step 2 Title"
+        },
+        "text2": {
+          "label": "Step 2 Text"
+        },
+        "image3": {
+          "label": "Step 3 Image"
+        },
+        "title3": {
+          "label": "Step 3 Title"
+        },
+        "text3": {
+          "label": "Step 3 Text"
+        },
+        "image4": {
+          "label": "Step 4 Image"
+        },
+        "title4": {
+          "label": "Step 4 Title"
+        },
+        "text4": {
+          "label": "Step 4 Text"
+        }
+      },
+      "presets": {
+        "name": "Multicolumn steps"
+      }
+    },
     "multicolumn": {
       "name": "Multicolumn",
       "settings": {
         "title": {
           "label": "Heading",
           "default": "Multicolumn"
+        },
+        "subtitle": {
+          "label": "Subtitle"
+        },
+        "subtitle_style": {
+          "label": "Subtitle style",
+          "options__1": {
+            "label": "Body"
+          },
+          "options__2": {
+            "label": "Subtitle"
+          },
+          "options__3": {
+            "label": "Uppercase"
+          }
         },
         "header_text": {
           "content": "Heading"
@@ -2827,6 +2927,14 @@
         "show_rating": {
           "label": "Product rating",
           "info": "An app is required for product ratings. [Learn more](https://help.shopify.com/manual/online-store/themes/customizing-themes/add-product-recommendations)"
+        },
+        "quick_add": {
+          "label": "Quick add",
+          "options": {
+            "option_1": "None",
+            "option_2": "Standard",
+            "option_3": "Bulk"
+          }
         },
         "columns_mobile": {
           "label": "Mobile columns",

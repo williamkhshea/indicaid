@@ -136,7 +136,8 @@
 
 .card__information {
   grid-row-start: 2;
-  padding: 1.3rem 1rem;
+  padding-bottom: 1.5rem;
+  /* padding: 1.3rem 1rem; */
 }
 
 .card:not(.ratio) > .card__content {
@@ -266,7 +267,7 @@
 @media screen and (min-width: 750px) {
   .card__information {
     padding-bottom: 1.7rem;
-    padding-top: 1.7rem;
+    /* padding-top: 1.7rem; */
   }
 }
 
@@ -400,11 +401,6 @@
     transition: transform var(--duration-long) ease;
     transform: scale(1.03);
   }
-
-  .underline-links-hover:hover a {
-    text-decoration: underline;
-    text-underline-offset: 0.3rem;
-  }
 }
 
 .card--standard.card--media .card__inner .card__information,
@@ -420,7 +416,7 @@
 }
 
 .card--standard > .card__content {
-  padding: 0;
+  padding: 24px;
 }
 
 .card--standard > .card__content .card__information {

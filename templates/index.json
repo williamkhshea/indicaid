@@ -6,23 +6,23 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "Bringing the Best Healthcare to Your Home.",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "text": "Test at Home. Get Results in Minutes.",
+            "text_style": "subtitle"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "Shop Now",
             "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
+            "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -35,124 +35,27 @@
         "button"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "image": "shopify://shop_images/25-0515_INH_website_HeroImages-notext.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-left",
         "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
+        "desktop_content_alignment": "left",
+        "color_scheme": "hero-image-scheme",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
     },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
+    "multicolumn_selling_points": {
       "type": "multicolumn",
       "blocks": {
         "column1": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "image": "shopify://shop_images/25_icons_know-your-health.png",
+            "title": "Know Your Health",
+            "text": "<p>Test early, stay ahead. Take control of your health with simple, at-home tests.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -160,8 +63,9 @@
         "column2": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "image": "shopify://shop_images/25_icons_fast-affordable.png",
+            "title": "Fast & Affordable",
+            "text": "<p>Get accurate results in minutes with transparent, affordable pricing.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -169,8 +73,9 @@
         "column3": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "image": "shopify://shop_images/25_icons_convenient.png",
+            "title": "Private & Convenient",
+            "text": "<p>Test privately from the comfort of home. Save time and skip the waiting rooms.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -192,19 +97,164 @@
         "button_label": "",
         "button_link": "",
         "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
+        "color_scheme": "light-grey-scheme",
         "columns_mobile": "1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "all",
+        "products_to_show": 4,
+        "title": "Explore Our Products",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "color_scheme": "default-scheme",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 48,
+        "padding_bottom": 48,
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_XyLG8e": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "womens-health"
+          }
+        },
+        "featured_collection_EMgRtD": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "respiratory-health"
+          }
+        },
+        "featured_collection_a6HntG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sexual-health"
+          }
+        },
+        "featured_collection_zqQLnC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "internal-health"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_XyLG8e",
+        "featured_collection_EMgRtD",
+        "featured_collection_a6HntG",
+        "featured_collection_zqQLnC"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
-    }
+    },
+    "multicolumn_review": {
+      "type": "multicolumn-review",
+      "blocks": {
+        "column_6wcjLX": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/25-0515_INH_website_HeroImages-notext.jpg",
+            "title": "Testing title",
+            "text": "<p>Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_4nwBK9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/25-0515_INH_website_HeroImages-notext.jpg",
+            "title": "Testing title",
+            "text": "<p>Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_6FRGUj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/25-0515_INH_website_HeroImages-notext.jpg",
+            "title": "Testing title",
+            "text": "<p>Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_1ABGUP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/25-0515_INH_website_HeroImages-notext.jpg",
+            "title": "Testing title",
+            "text": "<p>Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+      },
+      "block_order": [
+        "column_6wcjLX",
+        "column_4nwBK9",
+        "column_6FRGUj",
+        "column_1ABGUP"
+      ],
+      "name": "t:sections.multicolumn_review.presets.name",
+      "settings": {
+        "title": "People Love INDICAID!",
+        "heading_size": "h2",
+        "subtitle": "",
+        "subtitle_style": "body",
+        "image_width": "half",
+        "image_ratio": "circle",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "light-grey-scheme",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
   },
   "order": [
     "image_banner",
-    "rich_text",
+    "multicolumn_selling_points",
     "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "collection_list",
+    "multicolumn_review"
   ]
 }

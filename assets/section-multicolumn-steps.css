@@ -1,0 +1,52 @@
+/* Auto-distribute steps using CSS Grid */
+@media screen and (min-width: 750px) {
+  .multicolumn-steps-list:not(.slider) {
+    display: flex;
+    justify-content: center;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--grid-horizontal-spacing); */
+    > .multicolumn-list__item {
+      max-width: 350px;
+    }
+  }
+
+  /* Limit maximum width on very large screens */
+  /* @media screen and (min-width: 1400px) {
+    .multicolumn-steps-list:not(.slider) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+      justify-content: center;
+    }
+  } */
+}
+.multicolumn-card.content-container {
+  padding-top: 1.5rem;
+}
+
+.multicolumn-step-number-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Step number styling */
+.multicolumn-step-number {
+  color: #ffffff;
+  font-size: var(--font-size);
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(var(--color-button));
+  border-radius: 50%;
+}
+
+.line {
+  border-top: 1px solid rgb(var(--color-button));
+  width: 100%;
+  margin: initial;
+}

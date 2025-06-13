@@ -25,7 +25,8 @@
         "snapchat": "Snapchat",
         "youtube": "YouTube",
         "vimeo": "Vimeo",
-        "tiktok": "TikTok"
+        "tiktok": "TikTok",
+        "linkedin": "LinkedIn"
       }
     },
     "continue_shopping": "Continue shopping",
@@ -372,6 +373,14 @@
       "min_error": "This item has a minimum of {{ min }}",
       "max_error": "This item has a maximum of {{ max }}",
       "step_error": "You can only add this item in increments of {{ step }}"
+    },
+    "main-product": {
+      "settings": {
+        "product_info_heading": "Product Information",
+        "caption": {
+          "label": "Caption"
+        }
+      }
     }
   },
   "localization": {

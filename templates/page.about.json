@@ -1,0 +1,74 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "multirow_U3ea3B": {
+      "type": "multirow",
+      "blocks": {
+        "row_cyLrDw": {
+          "type": "row",
+          "settings": {
+            "caption": "",
+            "heading": "Bringing the Best Healthcare to Your Home",
+            "image": "shopify://shop_images/A_PREMIUM_-_MODULE_1_-_Early_Detection_Pregnancy_Test_Strips_25-pack_-_MB_-_Indicaid.jpg",
+            "text": "<p>Healthcare should be inclusive, affordable, and empowering. Our vision is to give everyone the confidence to take control of their wellness journey and gain a better understanding of their health — all from the comfort of home.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_G8Pbyn": {
+          "type": "row",
+          "settings": {
+            "caption": "",
+            "heading": "Backed by Science, Designed for You",
+            "image": "shopify://shop_images/A_PREMIUM_-_MODULE_2_-_Early_Detection_Pregnancy_Test_Strips_25-pack_-_MB_-_Indicaid.jpg",
+            "text": "<p>Founded by bioengineers from the prestigious UCLA and rooted in Irvine, California, we take a people-first approach to innovation. Every product is thoughtfully designed to deliver accuracy, speed, and affordability — putting your needs at the center of everything we do.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_bCJqcA": {
+          "type": "row",
+          "settings": {
+            "caption": "",
+            "heading": "Over 100 Million Rapid Tests Sold Worldwide",
+            "image": "shopify://shop_images/A_PREMIUM_-_MODULE_4A_-_Early_Detection_Pregnancy_Test_Strips_25-pack_-_MB_-_Indicaid.jpg",
+            "text": "<p>Trusted by individuals and healthcare providers across the globe, our solutions deliver fast, reliable results you can count on.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_cyLrDw",
+        "row_G8Pbyn",
+        "row_bCJqcA"
+      ],
+      "name": "t:sections.multirow.presets.name",
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "default-scheme",
+        "row_color_scheme": "default-scheme",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+  },
+  "order": [
+    "main",
+    "multirow_U3ea3B"
+  ]
+}
