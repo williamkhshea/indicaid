@@ -213,6 +213,7 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
+        "mobile_text_on_top": true,
         "section_color_scheme": "default-scheme",
         "row_color_scheme": "default-scheme",
         "padding_top": 144,

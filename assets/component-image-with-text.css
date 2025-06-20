@@ -394,6 +394,11 @@
     padding-left: 0;
   }
 }
+@media screen and (max-width: 749px) {
+  .image-with-text__grid--column-reverse {
+    flex-direction: column-reverse;
+  }
+}
 
 /* check for flexbox gap in older Safari versions */
 @supports not (inset: 10px) {

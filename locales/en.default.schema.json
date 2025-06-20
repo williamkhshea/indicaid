@@ -1629,6 +1629,9 @@
             "label": "Right"
           },
           "label": "Mobile alignment"
+        },
+        "mobile_text_on_top": {
+          "label": "Show text above image on mobile"
         }
       },
       "blocks": {

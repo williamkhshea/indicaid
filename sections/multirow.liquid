@@ -49,7 +49,7 @@
         class="image-with-text isolate{{ borders_class }}{{ corners_class }}{{ padding_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         {{ block.shopify_attributes }}
       >
-        <div class="image-with-text__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}5-col-tablet{% endif %}{% if section.settings.image_layout contains 'alternate' %}{% cycle odd_class, even_class %}{% else %}{{ odd_class }}{% endif %}">
+        <div class="image-with-text__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}5-col-tablet{% endif %}{% if section.settings.image_layout contains 'alternate' %}{% cycle odd_class, even_class %}{% else %}{{ odd_class }}{% endif %}{% if section.settings.mobile_text_on_top%} image-with-text__grid--column-reverse{% endif %}">
           <div class="image-with-text__media-item image-with-text__media-item--{{ section.settings.desktop_image_width }} image-with-text__media-item--{{ section.settings.desktop_content_position }} grid__item">
             <div
               class="image-with-text__media image-with-text__media--{{ section.settings.image_height }} gradient color-{{ section.settings.row_color_scheme }} global-media-settings{% if block.settings.image != blank %} media{% else %} image-with-text__media--placeholder placeholder{% endif %}"
@@ -314,6 +314,12 @@
       "label": "t:sections.multirow.settings.mobile_content_alignment.label"
     },
     {
+      "type": "checkbox",
+      "id": "mobile_text_on_top",
+      "label": "t:sections.multirow.settings.mobile_text_on_top.label",
+      "default": false
+    },
+    {
       "type": "header",
       "content": "t:sections.multirow.settings.header_3.content"
     },
@@ -337,7 +343,7 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 100,
+      "max": 200,
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
@@ -347,7 +353,7 @@
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 100,
+      "max": 200,
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
