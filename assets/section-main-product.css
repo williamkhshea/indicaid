@@ -1214,14 +1214,14 @@ a.product__text {
 
 /* Icon with text */
 .icon-with-text {
-  --icon-size: calc(var(--font-heading-scale) * 3rem);
+  --icon-size: calc(var(--font-heading-scale) * 4rem);
   --icon-spacing: calc(var(--font-heading-scale) * 1rem);
 }
 
 .icon-with-text--horizontal {
   display: flex;
   justify-content: center;
-  column-gap: 1.5rem;
+  column-gap: 1rem;
   flex-direction: row;
 }
 
@@ -1276,6 +1276,8 @@ a.product__text {
 .icon-with-text--horizontal .icon-with-text__item {
   /* flex-direction: column; */
   width: 33%;
+  line-height: 1.4;
+  font-size: 1.4rem;
 }
 
 .icon-with-text--vertical .icon-with-text__item {
