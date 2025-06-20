@@ -753,6 +753,7 @@ class SliderComponent extends HTMLElement {
     );
     this.totalPages = this.sliderItemsToShow.length - this.slidesPerPage + 1;
     this.update();
+    console.log('this', this);
   }
 
   resetPages() {
@@ -805,6 +806,10 @@ class SliderComponent extends HTMLElement {
     event.preventDefault();
     const step = event.currentTarget.dataset.step || 1;
 
+    console.log('button clicked');
+    console.log('step:', step);
+    console.log('event.currentTarget.name:', event.currentTarget.name);
+    console.log('this.currentPage:', this);
     // Handle looping behavior
     if (event.currentTarget.name === 'previous' && this.currentPage === 1) {
       // If on first slide and previous button clicked, go to last slide

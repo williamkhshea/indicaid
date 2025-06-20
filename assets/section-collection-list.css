@@ -3,6 +3,16 @@
   margin-bottom: 0;
 }
 
+.collection-list-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 .collection-list-title {
   margin: 0;
 }

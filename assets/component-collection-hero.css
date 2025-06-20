@@ -21,6 +21,7 @@
 
 .collection-hero__text-wrapper {
   flex-basis: 100%;
+  text-align: center;
 }
 
 @media screen and (min-width: 750px) {
@@ -53,9 +54,11 @@
     margin-bottom: 2rem;
   }
 
+  /*
   .collection-hero__description {
     max-width: 66.67%;
   }
+  */
 
   .collection-hero--with-image .collection-hero__description {
     max-width: 100%;

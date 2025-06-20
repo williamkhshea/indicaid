@@ -22,7 +22,7 @@
           "settings": {
             "button_label_1": "Shop Now",
             "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
+            "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -41,7 +41,7 @@
         "desktop_content_position": "middle-left",
         "show_text_box": false,
         "desktop_content_alignment": "left",
-        "color_scheme": "hero-image-scheme",
+        "color_scheme": "light-grey-scheme",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
@@ -53,9 +53,9 @@
         "column1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/25_icons_know-your-health.png",
-            "title": "Know Your Health",
-            "text": "<p>Test early, stay ahead. Take control of your health with simple, at-home tests.<\/p>",
+            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "title": "Test Early, Know Sooner",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -63,9 +63,9 @@
         "column2": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/25_icons_fast-affordable.png",
-            "title": "Fast & Affordable",
-            "text": "<p>Get accurate results in minutes with transparent, affordable pricing.<\/p>",
+            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "title": "Fast Results in Minutes",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -73,9 +73,19 @@
         "column3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/25_icons_convenient.png",
-            "title": "Private & Convenient",
-            "text": "<p>Test privately from the comfort of home. Save time and skip the waiting rooms.<\/p>",
+            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "title": "Private At-Home Testing",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "title": "Affordable Care",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -84,23 +94,24 @@
       "block_order": [
         "column1",
         "column2",
-        "column3"
+        "column3",
+        "column4"
       ],
       "settings": {
         "title": "",
         "heading_size": "h1",
         "image_width": "third",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "column_alignment": "center",
         "background_style": "none",
         "button_label": "",
         "button_link": "",
         "swipe_on_mobile": false,
-        "color_scheme": "light-grey-scheme",
-        "columns_mobile": "1",
-        "padding_top": 48,
-        "padding_bottom": 48
+        "color_scheme": "default-scheme",
+        "columns_mobile": "2",
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
     "featured_collection": {
@@ -116,7 +127,7 @@
         "columns_desktop": 4,
         "enable_desktop_slider": true,
         "full_width": false,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "outline",
         "color_scheme": "default-scheme",
         "image_ratio": "square",
@@ -151,32 +162,139 @@
           "settings": {
             "collection": "sexual-health"
           }
-        },
-        "featured_collection_zqQLnC": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "internal-health"
-          }
         }
       },
       "block_order": [
         "featured_collection_XyLG8e",
         "featured_collection_EMgRtD",
-        "featured_collection_a6HntG",
-        "featured_collection_zqQLnC"
+        "featured_collection_a6HntG"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
-        "title": "Collections",
+        "title": "Shop Based on Your Health Needs",
+        "subtitle": "<p>Whether you have a health concern or a goal, we’re here to help you better understand your body and find peace of mind.</p>",
         "heading_size": "h1",
         "image_ratio": "square",
-        "columns_desktop": 4,
+        "column_alignment": "center",
+        "columns_desktop": 3,
         "color_scheme": "",
         "show_view_all": true,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "multicolumn_science": {
+      "type": "multicolumn",
+      "blocks": {
+        "column1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "title": "",
+            "text": "<p>1 Million+ Rapid Tests Sold Globally</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "title": "",
+            "text": "<p>Founded by UCLA Bioengineers</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "title": "",
+            "text": "<p>Trusted By Doctors Around the World</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "title": "",
+            "text": "<p>Powered by PHASiFY,</p><p>Our Proprietary Technology</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column1",
+        "column2",
+        "column3",
+        "column4"
+      ],
+      "settings": {
+        "title": "Backed by Science",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": false,
+        "color_scheme": "dark-teal-scheme",
+        "columns_mobile": "2",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "multicolumn_logo": {
+      "type": "multicolumn",
+      "blocks": {
+        "column1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column1",
+        "column2",
+      ],
+      "settings": {
+        "title": "Find INDICAID health Products Online ",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": false,
+        "color_scheme": "light-teal-scheme",
+        "columns_mobile": "2",
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
     "multicolumn_review": {
@@ -235,7 +353,7 @@
         "heading_size": "h2",
         "subtitle": "",
         "subtitle_style": "body",
-        "image_width": "half",
+        "image_width": "third",
         "image_ratio": "circle",
         "button_label": "",
         "button_link": "",
@@ -243,7 +361,7 @@
         "column_alignment": "center",
         "background_style": "none",
         "color_scheme": "light-grey-scheme",
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 48,
         "padding_bottom": 48
@@ -255,6 +373,8 @@
     "multicolumn_selling_points",
     "featured_collection",
     "collection_list",
+    "multicolumn_science",
+    "multicolumn_logo",
     "multicolumn_review"
   ]
 }

@@ -316,7 +316,7 @@ slider-component.slider-component-full-width {
   align-items: center;
   justify-content: center;
 }
-/* 
+
 @media screen and (min-width: 990px) {
   .slider:not(.slider--everywhere):not(.slider--desktop) + .slider-buttons {
     display: none;
@@ -333,7 +333,7 @@ slider-component.slider-component-full-width {
   .slider--mobile + .slider-buttons {
     display: none;
   }
-} */
+}
 
 .slider-button {
   width: 34px;
