@@ -14,7 +14,7 @@
           "type": "text",
           "settings": {
             "text": "Test at Home. Get Results in Minutes.",
-            "text_style": "subtitle"
+            "text_style": "h1"
           }
         },
         "button": {
@@ -367,6 +367,25 @@
         "padding_bottom": 48
       }
     },
+    "1750420057f3977db6": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_featured_carousel_XFfqqc": {
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1080
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_featured_carousel_XFfqqc"
+      ],
+      "settings": {
+        "include_margins": true,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
   },
   "order": [
     "image_banner",
@@ -375,6 +394,7 @@
     "collection_list",
     "multicolumn_science",
     "multicolumn_logo",
-    "multicolumn_review"
+    "multicolumn_review",
+    "1750420057f3977db6"
   ]
 }

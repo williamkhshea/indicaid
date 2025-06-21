@@ -115,6 +115,7 @@
     "social_tumblr_link": "",
     "social_vimeo_link": "",
     "social_linkedin_link": "https://www.linkedin.com/company/phasescientificamericas",
+    "brand_headline": "Stay Connected",
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
@@ -141,7 +142,7 @@
     "blocks": {
       "14060646107696862457": {
         "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     },

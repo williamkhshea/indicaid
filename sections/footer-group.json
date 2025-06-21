@@ -8,29 +8,35 @@
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "Support",
-            "menu": "footer"
+            "heading": "Shop",
+            "menu": "footer-shop"
           }
         },
         "footer-1": {
-          "type": "link_list",
-          "settings": {
-            "heading": "About",
-            "menu": "footer-about"
-          }
-        },
-        "footer-2": {
           "type": "link_list",
           "settings": {
             "heading": "Save",
             "menu": "footer-save"
           }
         },
+        "footer-2": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Save",
+            "menu": "footer-about"
+          }
+        },
         "footer-3": {
           "type": "link_list",
           "settings": {
-            "heading": "Care",
-            "menu": "footer-care"
+            "heading": "Support",
+            "menu": "footer"
+          }
+        },
+        "brand_information_gxAcLz": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
           }
         }
       },
@@ -38,16 +44,14 @@
         "footer-0",
         "footer-1",
         "footer-2",
-        "footer-3"
-      ],
-      "custom_css": [
-        
+        "footer-3",
+        "brand_information_gxAcLz"
       ],
       "settings": {
         "color_scheme": "footer-scheme",
-        "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
-        "show_social": true,
+        "newsletter_enable": false,
+        "newsletter_heading": "",
+        "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": false,
