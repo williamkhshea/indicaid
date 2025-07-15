@@ -282,7 +282,7 @@ h5,
 }
 
 .h0 {
-  font-size: calc(var(--font-heading-scale) * 4rem);
+  font-size: calc(var(--font-heading-scale) * 4.8rem);
 }
 
 @media only screen and (min-width: 750px) {
@@ -294,7 +294,7 @@ h5,
 h1,
 .h1 {
   font-family: var(--font-heading-family);
-  font-size: calc(var(--font-heading-scale) * 3.2rem);
+  font-size: calc(var(--font-heading-scale) * 2.4rem);
 }
 
 @media only screen and (min-width: 750px) {
@@ -307,19 +307,19 @@ h1,
 h2,
 .h2 {
   font-family: var(--font-heading-family);
-  font-size: calc(var(--font-heading-scale) * 2.6rem);
+  font-size: calc(var(--font-heading-scale) * 2.1rem);
 }
 
 @media only screen and (min-width: 750px) {
   h2,
   .h2 {
-    font-size: calc(var(--font-heading-scale) * 3rem);
+    font-size: calc(var(--font-heading-scale) * 2.8rem);
   }
 }
 
 h3,
 .h3 {
-  font-size: calc(var(--font-heading-scale) * 2.2rem);
+  font-size: calc(var(--font-heading-scale) * 1.8rem);
 }
 
 @media only screen and (min-width: 750px) {
@@ -333,12 +333,19 @@ h4,
 .h4 {
   /* font-family: var(--font-heading-family); */
   font-style: var(--font-heading-style);
-  font-size: calc(var(--font-heading-scale) * 1.8rem);
+  font-size: calc(var(--font-heading-scale) * 1.5rem);
+}
+
+@media only screen and (min-width: 750px) {
+  h4,
+  .h4 {
+    font-size: calc(var(--font-heading-scale) * 1.8rem);
+  }
 }
 
 h5,
 .h5 {
-  font-size: calc(var(--font-heading-scale) * 1.5rem);
+  font-size: calc(var(--font-heading-scale) * 1.2rem);
 }
 
 @media only screen and (min-width: 750px) {
@@ -882,6 +889,7 @@ summary::-webkit-details-marker {
   .grid {
     column-gap: var(--grid-desktop-horizontal-spacing);
     row-gap: var(--grid-desktop-vertical-spacing);
+    justify-content: center;
   }
 }
 
@@ -1175,6 +1183,13 @@ deferred-media {
 .button--tertiary {
   --color-button: var(--color-secondary-button);
   --color-button-text: var(--color-secondary-button-text);
+}
+
+.button--link {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: unset;
 }
 
 .button--tertiary {

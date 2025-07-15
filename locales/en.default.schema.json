@@ -390,7 +390,7 @@
       "padding": {
         "section_padding_heading": "Padding",
         "padding_top": "Top",
-        "padding_bottom": "Bottom"
+        "padding_bottom": "Bottom",
       },
       "spacing": "Spacing",
       "colors": {
@@ -1159,6 +1159,7 @@
         }
       }
     },
+    "image-banner-collection": {"name": "Collection image banner"},
     "image-banner": {
       "name": "Image banner",
       "settings": {
@@ -1523,14 +1524,17 @@
           "label": "Image"
         },
         "header":{
-        "content": "Image"
+          "content": "Image"
         },
         "header_2":{
-        "content": "Content"
+          "content": "Content"
         },
         "header_3":{
-        "content": "Colors"
-        },        
+          "content": "Colors"
+        },
+        "header_4":{
+          "content": "Padding container"
+        },      
         "image_height": {
           "options__1": {
             "label": "Adapt to image"
@@ -1573,6 +1577,9 @@
           },
           "options__2": {
             "label": "Outline button"
+          },
+          "options__3": {
+            "label": "Link"
           },
           "label": "Button style"
         },
@@ -1632,7 +1639,19 @@
         },
         "mobile_text_on_top": {
           "label": "Show text above image on mobile"
-        }
+        },
+        "padding_x_image":{
+          "content": "Padding horizontal (image)"
+        },
+        "padding_y_image":{
+          "content": "Padding vertical (image)"
+        },
+        "padding_x_content":{
+          "content": "Padding horizontal (content)"
+        },
+        "padding_y_content":{
+          "content": "Padding vertical (content)"
+        },
       },
       "blocks": {
         "row": {
@@ -2666,6 +2685,9 @@
           "settings": {
             "image": {
               "label": "Image"
+            },
+            "image_link": {
+              "label": "Image link"
             },
             "title": {
               "label": "Heading",

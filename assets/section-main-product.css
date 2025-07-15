@@ -1599,6 +1599,9 @@ a.product__text {
   .product-info-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .product-info-grid-item.grid {
+    justify-content: left;
+  }
 }
 
 .upsell__content {

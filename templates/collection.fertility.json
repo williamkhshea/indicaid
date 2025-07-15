@@ -1,18 +1,41 @@
 {
   "sections": {
+    "image_banner": {
+      "type": "image-banner-collection",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fertility Health",
+            "heading_size": "h0"
+          }
+        },
+      },
+      "block_order": [
+        "heading",
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Cat-Fertility-S1-Hero.png",
+        "image_height": "adapt",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "hcg-red-scheme",
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
-        "color_scheme": "light-grey-scheme"
+        "color_scheme": "hcg-pink-scheme"
       }
     },
-        "featured_collection": {
+    "featured_collection": {
       "type": "featured-collection",
       "settings": {
         "collection": "all",
-        "products_to_show": 2,
+        "products_to_show": 3,
         "title": "Explore INDICAID Fertility Tests",
         "heading_size": "h1",
         "description": "",
@@ -21,7 +44,7 @@
         "columns_desktop": 2,
         "enable_desktop_slider": true,
         "full_width": false,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "outline",
         "color_scheme": "default-scheme",
         "image_ratio": "square",
@@ -36,26 +59,63 @@
         "padding_bottom": 48,
       }
     },
-    "product-grid": {
-      "type": "main-collection-product-grid",
+    "multirow": {
+      "type": "multirow",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/Cat-Fertility-HCG_S4-Image-1.png",
+            "caption": "",
+            "heading": "hCG Early Result Pregnancy Test Strips",
+            "text": "<p><strong>Trying to Conceive</strong></p><p>If you’re actively planning for a baby and want to find out as early as possible.</p><p><strong>Experiencing Symptoms</strong></p><p>If you’re actively planning for a baby and want to find out as early as possible.</p><p><strong>Seeking Clarity</strong></p><p>If you’re actively planning for a baby and want to find out as early as possible</p>",
+            "button_label": "Learn more >",
+            "button_link": "#"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/Cat-Fertility-HCG_S4-Image-1.png",
+            "caption": "",
+            "heading": "hCG Early Result Pregnancy Test Strips",
+            "text": "<p><strong>Trying to Conceive</strong></p><p>If you’re actively planning for a baby and want to find out as early as possible.</p><p><strong>Experiencing Symptoms</strong></p><p>If you’re actively planning for a baby and want to find out as early as possible.</p><p><strong>Seeking Clarity</strong></p><p>If you’re actively planning for a baby and want to find out as early as possible</p>",
+            "button_label": "Learn more >",
+            "button_link": "#"
+          }
+        },
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+      ],
+      "name": "t:sections.multirow.presets.name",
       "settings": {
-        "products_per_page": 16,
-        "columns_desktop": 4,
-        "image_ratio": "square",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_filtering": true,
-        "enable_sorting": true,
-        "columns_mobile": "2",
-        "padding_top": 48,
-        "padding_bottom": 48
+        "image_height": "adapt",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "link",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_text_on_top": false,
+        "section_color_scheme": "default-scheme",
+        "row_color_scheme": "hcg-pink-scheme",
+        "padding_top": 144,
+        "padding_bottom": 144,
+        "padding_x_image": 24,
+        "padding_y_image": 24,
+        "padding_x_content": 20,
+        "padding_y_content": 18,
       }
-    }
+    },
   },
   "order": [
+    "image_banner",
     "banner",
     "featured_collection",
-    "product-grid"
+    "multirow"
   ]
 }

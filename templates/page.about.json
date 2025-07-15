@@ -1,10 +1,53 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Your Health Journey Starts With INDICAID",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
       "settings": {
-        "padding_top": 48,
-        "padding_bottom": 48
+        "image": "shopify://shop_images/AboutUs_S1_HeroImage.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "mobile_image_crop": "right",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "default-scheme",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
       }
     },
     "multirow_U3ea3B": {
@@ -13,9 +56,9 @@
         "row_cyLrDw": {
           "type": "row",
           "settings": {
+            "image": "shopify://shop_images/AboutUs-S2_Image-1-HealthcareHome.jpg",
             "caption": "",
             "heading": "Bringing the Best Healthcare to Your Home",
-            "image": "shopify://shop_images/A_PREMIUM_-_MODULE_1_-_Early_Detection_Pregnancy_Test_Strips_25-pack_-_MB_-_Indicaid.jpg",
             "text": "<p>Healthcare should be inclusive, affordable, and empowering. Our vision is to give everyone the confidence to take control of their wellness journey and gain a better understanding of their health — all from the comfort of home.</p>",
             "button_label": "",
             "button_link": ""
@@ -24,9 +67,9 @@
         "row_G8Pbyn": {
           "type": "row",
           "settings": {
+            "image": "shopify://shop_images/AboutUs-S2_Image-2-BackedByScience.jpg",
             "caption": "",
             "heading": "Backed by Science, Designed for You",
-            "image": "shopify://shop_images/A_PREMIUM_-_MODULE_2_-_Early_Detection_Pregnancy_Test_Strips_25-pack_-_MB_-_Indicaid.jpg",
             "text": "<p>Founded by bioengineers from the prestigious UCLA and rooted in Irvine, California, we take a people-first approach to innovation. Every product is thoughtfully designed to deliver accuracy, speed, and affordability — putting your needs at the center of everything we do.</p>",
             "button_label": "",
             "button_link": ""
@@ -35,9 +78,9 @@
         "row_bCJqcA": {
           "type": "row",
           "settings": {
+            "image": "shopify://shop_images/AboutUs-S2_Image-3-Over100Mil.jpg",
             "caption": "",
             "heading": "Over 100 Million Rapid Tests Sold Worldwide",
-            "image": "shopify://shop_images/A_PREMIUM_-_MODULE_4A_-_Early_Detection_Pregnancy_Test_Strips_25-pack_-_MB_-_Indicaid.jpg",
             "text": "<p>Trusted by individuals and healthcare providers across the globe, our solutions deliver fast, reliable results you can count on.</p>",
             "button_label": "",
             "button_link": ""
@@ -60,15 +103,20 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
+        "mobile_text_on_top": false,
         "section_color_scheme": "default-scheme",
         "row_color_scheme": "default-scheme",
         "padding_top": 48,
-        "padding_bottom": 48
+        "padding_bottom": 48,
+        "padding_x_image": 0,
+        "padding_y_image": 0,
+        "padding_x_content": 70,
+        "padding_y_content": 60
       }
-    },
+    }
   },
   "order": [
-    "main",
+    "image_banner",
     "multirow_U3ea3B"
   ]
 }

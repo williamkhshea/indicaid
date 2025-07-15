@@ -129,8 +129,16 @@
   display: grid;
   grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
   padding: 1rem;
-  width: 100%;
+  /* width: 100%; */
   flex-grow: 1;
+}
+
+.collection-card-wrapper .card__content {
+  position: absolute;
+}
+
+.collection-card-wrapper .card__content .card__heading {
+  color: #ffffff;
 }
 
 .card__content--auto-margins {
@@ -139,7 +147,7 @@
 
 .card__information {
   grid-row-start: 2;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
   /* padding: 1.3rem 1rem; */
 }
 

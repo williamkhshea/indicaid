@@ -6,7 +6,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Bringing the Best Healthcare to Your Home.",
+            "heading": "Bringing Healthcare to Your Home.",
             "heading_size": "h0"
           }
         },
@@ -35,7 +35,7 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/25-0515_INH_website_HeroImages-notext.jpg",
+        "image": "shopify://shop_images/Homepage_S1_HeroImage.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-left",
@@ -53,7 +53,7 @@
         "column1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "image": "shopify://shop_images/Homepage_S2_Icon-1_Test-Early-Know-Sooner.png",
             "title": "Test Early, Know Sooner",
             "text": "",
             "link_label": "",
@@ -63,7 +63,7 @@
         "column2": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "image": "shopify://shop_images/Homepage_S2_Icon-2_Fast-Results.png",
             "title": "Fast Results in Minutes",
             "text": "",
             "link_label": "",
@@ -73,7 +73,7 @@
         "column3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "image": "shopify://shop_images/Homepage_S2_Icon-3_Private-AtHome-Testing.png",
             "title": "Private At-Home Testing",
             "text": "",
             "link_label": "",
@@ -83,7 +83,7 @@
         "column4": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "image": "shopify://shop_images/Homepage_S2_Icon-4_Affordable-Care.png",
             "title": "Affordable Care",
             "text": "",
             "link_label": "",
@@ -137,7 +137,7 @@
         "show_rating": true,
         "quick_add": "standard",
         "columns_mobile": "2",
-        "swipe_on_mobile": true,
+        "swipe_on_mobile": false,
         "padding_top": 48,
         "padding_bottom": 48,
       }
@@ -148,19 +148,19 @@
         "featured_collection_XyLG8e": {
           "type": "featured_collection",
           "settings": {
-            "collection": "womens-health"
+            "collection": "respiratory-health"
           }
         },
         "featured_collection_EMgRtD": {
           "type": "featured_collection",
           "settings": {
-            "collection": "respiratory-health"
+            "collection": "fertility-health"
           }
         },
         "featured_collection_a6HntG": {
           "type": "featured_collection",
           "settings": {
-            "collection": "sexual-health"
+            "collection": "general-health"
           }
         }
       },
@@ -178,9 +178,9 @@
         "column_alignment": "center",
         "columns_desktop": 3,
         "color_scheme": "",
-        "show_view_all": true,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 48,
         "padding_bottom": 48
       }
@@ -191,7 +191,7 @@
         "column1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "image": "shopify://shop_images/Homepage_S5_Icon-1_GloballySold.png",
             "title": "",
             "text": "<p>1 Million+ Rapid Tests Sold Globally</p>",
             "link_label": "",
@@ -201,7 +201,7 @@
         "column2": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "image": "shopify://shop_images/Homepage_S5_Icon-2_Bioengineers.png",
             "title": "",
             "text": "<p>Founded by UCLA Bioengineers</p>",
             "link_label": "",
@@ -211,7 +211,7 @@
         "column3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "image": "shopify://shop_images/Homepage_S5_Icon-3_TrustedByDoctors.png",
             "title": "",
             "text": "<p>Trusted By Doctors Around the World</p>",
             "link_label": "",
@@ -221,7 +221,7 @@
         "column4": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "image": "shopify://shop_images/Homepage_S5_Icon-4_Phasify.png",
             "title": "",
             "text": "<p>Powered by PHASiFY,</p><p>Our Proprietary Technology</p>",
             "link_label": "",
@@ -258,7 +258,8 @@
         "column1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "image": "shopify://shop_images/Homepage_S6_Image-1_amazon-logo-black-transparent.png",
+            "image_link": "https://www.amazon.com/stores/IndicaidHealthAt-HomeTesting/page/1697F2B1-D3F4-4EF1-8378-A4B3D5EA2556",
             "title": "",
             "text": "",
             "link_label": "",
@@ -268,7 +269,8 @@
         "column2": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PDP-HCG_S1-Icon-1-EasyToUse.png",
+            "image": "shopify://shop_images/Homepage_S6_Image-1_walmart-logo-black-transparent.png",
+            "image_link": "https://www.walmart.com/ip/INDICAID-s-Rapid-Ovulation-Test-Strips-50-pack-Easy-to-use-with-rapid-results-in-5-minutes-HSA-FSA-Eligible/9969703533",
             "title": "",
             "text": "",
             "link_label": "",
@@ -283,7 +285,7 @@
       "settings": {
         "title": "Find INDICAID health Products Online ",
         "heading_size": "h1",
-        "image_width": "third",
+        "image_width": "half",
         "image_ratio": "adapt",
         "columns_desktop": 2,
         "column_alignment": "center",
@@ -293,76 +295,6 @@
         "swipe_on_mobile": false,
         "color_scheme": "light-teal-scheme",
         "columns_mobile": "2",
-        "padding_top": 24,
-        "padding_bottom": 24
-      }
-    },
-    "multicolumn_review": {
-      "type": "multicolumn-review",
-      "blocks": {
-        "column_6wcjLX": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/25-0515_INH_website_HeroImages-notext.jpg",
-            "title": "Testing title",
-            "text": "<p>Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_4nwBK9": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/25-0515_INH_website_HeroImages-notext.jpg",
-            "title": "Testing title",
-            "text": "<p>Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_6FRGUj": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/25-0515_INH_website_HeroImages-notext.jpg",
-            "title": "Testing title",
-            "text": "<p>Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_1ABGUP": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/25-0515_INH_website_HeroImages-notext.jpg",
-            "title": "Testing title",
-            "text": "<p>Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes. Test at Home. Get Results in Minutes.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-      },
-      "block_order": [
-        "column_6wcjLX",
-        "column_4nwBK9",
-        "column_6FRGUj",
-        "column_1ABGUP"
-      ],
-      "name": "t:sections.multicolumn_review.presets.name",
-      "settings": {
-        "title": "People Love INDICAID!",
-        "heading_size": "h2",
-        "subtitle": "",
-        "subtitle_style": "body",
-        "image_width": "third",
-        "image_ratio": "circle",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 4,
-        "column_alignment": "center",
-        "background_style": "none",
-        "color_scheme": "light-grey-scheme",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
         "padding_top": 48,
         "padding_bottom": 48
       }
@@ -394,7 +326,6 @@
     "collection_list",
     "multicolumn_science",
     "multicolumn_logo",
-    "multicolumn_review",
     "1750420057f3977db6"
   ]
 }
