@@ -1,0 +1,261 @@
+/* Base styles */
+.tabs-section {
+  overflow: hidden;
+}
+
+.tabs-section__wrapper {
+  position: relative;
+}
+
+/* Slider modifications for tabs */
+.tabs-slider {
+  position: relative;
+}
+
+.tabs-slider__list {
+  display: flex;
+  gap: 5rem;
+  padding: 0 5rem;
+  margin: 0;
+}
+
+.tabs-slider__item {
+  list-style: none;
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+/* Tab content layout */
+.tab-content {
+  display: grid;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Desktop layout - side by side */
+@media screen and (min-width: 990px) {
+  .tab-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .tab-content__media {
+    order: 1;
+  }
+  
+  .tab-content__text {
+    order: 2;
+  }
+}
+
+/* Tablet layout */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .tabs-slider__list {
+    gap: 4rem;
+    padding: 0 4rem;
+  }
+  
+  .tab-content {
+    gap: 3rem;
+  }
+}
+
+/* Mobile layout - stacked */
+@media screen and (max-width: 989px) {
+  .tab-content {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  
+  .tab-content__media {
+    order: 1;
+  }
+  
+  .tab-content__text {
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .tabs-slider__list {
+    gap: 3rem;
+    padding: 0 3rem;
+  }
+  
+  .tab-content {
+    gap: 2rem;
+  }
+}
+
+/* Typography */
+.tab-content__title {
+  margin: 0 0 2rem;
+}
+
+.tab-content__description {
+  margin-bottom: 3rem;
+}
+
+.tab-content__description:last-child {
+  margin-bottom: 0;
+}
+
+.tab-content__text .button {
+  margin-top: 0;
+}
+
+/* Image handling */
+.tab-content__media {
+  overflow: hidden;
+  border-radius: var(--media-radius);
+  box-shadow: var(--media-shadow-horizontal-offset)
+              var(--media-shadow-vertical-offset)
+              var(--media-shadow-blur-radius)
+              rgba(var(--color-shadow), var(--media-shadow-opacity));
+}
+
+.tab-content__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Arrow button adjustments for tabs */
+.tabs-slider .slider-buttons {
+  display: flex;
+}
+
+.tabs-slider .slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabs-slider .slider-button--prev {
+  left: 0;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.tabs-slider .slider-button--next {
+  right: 0;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+@media screen and (min-width: 990px) {
+  .tabs-slider .slider-button {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .tabs-slider .slider-button--prev {
+    left: 1rem;
+    transform: translateY(-50%) rotate(90deg);
+  }
+  
+  .tabs-slider .slider-button--next {
+    right: 1rem;
+    transform: translateY(-50%) rotate(-90deg);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .tabs-slider .slider-button--prev {
+    left: 3rem;
+    transform: translateY(-50%) rotate(90deg);
+  }
+  
+  .tabs-slider .slider-button--next {
+    right: 3rem;
+    transform: translateY(-50%) rotate(-90deg);
+  }
+}
+
+/* Hide buttons when there's only one slide */
+.tabs-slider__list:only-child + .slider-buttons {
+  display: none;
+}
+
+/* Smooth scrolling */
+.tabs-slider__list {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+.tabs-slider__item {
+  scroll-snap-align: start;
+}
+
+/* Hide scrollbar for cleaner look */
+.tabs-slider__list {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.tabs-slider__list::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs-slider__list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Content alignment */
+@media screen and (min-width: 990px) {
+  .tab-content__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+  }
+}
+
+/* Responsive image sizing */
+.tab-content__media {
+  position: relative;
+  padding-bottom: 100%; /* Default 1:1 aspect ratio */
+}
+
+.tab-content__media img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .tab-content__media {
+    padding-bottom: 66.66%; /* 3:2 aspect ratio */
+  }
+}
+
+/* Color scheme adjustments */
+.tabs-section.gradient {
+  background: rgb(var(--color-background));
+  background: var(--gradient-background);
+}
+
+/* Animation for tab transitions */
+@media (prefers-reduced-motion: no-preference) {
+  .tabs-slider__item {
+    transition: opacity 0.2s ease-out;
+  }
+}
+
+/* Focus styles for accessibility */
+.tabs-slider .slider-button:focus-visible {
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline-offset: 0.3rem;
+}
+
+/* Button hover state */
+.tabs-slider .slider-button:hover:not([disabled]) {
+  background-color: rgb(var(--color-foreground), 0.75);
+}

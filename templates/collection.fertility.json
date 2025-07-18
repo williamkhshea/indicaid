@@ -59,6 +59,43 @@
         "padding_bottom": 48,
       }
     },
+    "tabs": {
+      "type": "tabs",
+      "blocks": {
+        "tab_1": {
+          "type": "tab",
+          "settings": {
+            "image": "shopify://shop_images/AboutUs-S2_Image-2-BackedByScience.jpg",
+            "title": "Early Detection Technology",
+            "text": "<p>Our ultra-sensitive test strips can detect pregnancy hormones as early as 6 days before your missed period, giving you the answers you need sooner.</p>",
+            "button_label": "Shop Pregnancy Tests",
+            "button_link": "/collections/pregnancy-tests"
+          }
+        },
+        "tab_2": {
+          "type": "tab",
+          "settings": {
+            "image": "shopify://shop_images/AboutUs-S2_Image-3-Over100Mil.jpg",
+            "title": "Track Your Fertility Window",
+            "text": "<p>Maximize your chances of conception with our ovulation tests that help you identify your most fertile days with precision and confidence.</p>",
+            "button_label": "Shop Ovulation Tests",
+            "button_link": "/collections/ovulation-tests"
+          }
+        }
+      },
+      "block_order": [
+        "tab_1",
+        "tab_2"
+      ],
+      "settings": {
+        "heading": "The Science Behind INDICIAD Fertility Health",
+        "heading_size": "h1",
+        "button_style": "primary",
+        "section_color_scheme": "light-grey-scheme",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "multirow": {
       "type": "multirow",
       "blocks": {
@@ -116,6 +153,7 @@
     "image_banner",
     "banner",
     "featured_collection",
+    "tabs",
     "multirow"
   ]
 }
