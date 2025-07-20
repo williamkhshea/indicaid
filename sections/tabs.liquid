@@ -24,6 +24,22 @@
         </div>
       {%- endif -%}
 
+      {%- if section.blocks.size > 0 -%}
+        <div class="tabs-navigation">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.tab_name != blank -%}
+              <button
+                class="tab-button {% if forloop.first %}tab-button--active{% endif %}"
+                data-tab-index="{{ forloop.index0 }}"
+                data-slider-id="Slider-{{ section.id }}"
+              >
+                {{ block.settings.tab_name | escape }}
+              </button>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
       <slider-component class="tabs-slider" data-autoplay="false">
         <ul
           id="Slider-{{ section.id }}"
@@ -109,6 +125,56 @@
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const sliderComponent = document.querySelector('slider-component');
+    
+    tabButtons.forEach((button, index) => {
+      button.addEventListener('click', function() {
+        const sliderId = this.dataset.sliderId;
+        const tabIndex = parseInt(this.dataset.tabIndex);
+        const slider = document.getElementById(sliderId);
+        
+        if (slider && sliderComponent) {
+          // Remove active class from all buttons
+          tabButtons.forEach(btn => btn.classList.remove('tab-button--active'));
+          // Add active class to clicked button
+          this.classList.add('tab-button--active');
+          
+          // Navigate to the corresponding slide
+          const slideWidth = slider.querySelector('.slider__slide').offsetWidth;
+          const gap = parseFloat(window.getComputedStyle(slider).gap) || 0;
+          const scrollPosition = tabIndex * (slideWidth + gap);
+          
+          slider.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Update active tab based on scroll position
+    const slider = document.querySelector('.tabs-slider__list');
+    if (slider) {
+      slider.addEventListener('scroll', function() {
+        const slideWidth = slider.querySelector('.slider__slide').offsetWidth;
+        const gap = parseFloat(window.getComputedStyle(slider).gap) || 0;
+        const currentIndex = Math.round(slider.scrollLeft / (slideWidth + gap));
+        
+        tabButtons.forEach((button, index) => {
+          if (index === currentIndex) {
+            button.classList.add('tab-button--active');
+          } else {
+            button.classList.remove('tab-button--active');
+          }
+        });
+      });
+    }
+  });
+</script>
 
 {% schema %}
 {
@@ -197,6 +263,11 @@
       "name": "t:sections.tabs.blocks.tab.name",
       "settings": [
         {
+          "type": "text",
+          "id": "tab_name",
+          "label": "t:sections.tabs.blocks.tab.settings.tab_name.label"
+        },
+        {
           "type": "image_picker",
           "id": "image",
           "label": "t:sections.tabs.blocks.tab.settings.image.label"
@@ -231,9 +302,6 @@
     {
       "name": "t:sections.tabs.presets.name",
       "blocks": [
-        {
-          "type": "tab"
-        },
         {
           "type": "tab"
         },

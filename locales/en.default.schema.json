@@ -3311,6 +3311,9 @@
         "tab": {
           "name": "Tab",
           "settings": {
+            "tab_name": {
+              "label": "Tab name"
+            },
             "image": {
               "label": "Image"
             },
